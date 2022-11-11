@@ -10,8 +10,8 @@ pipeline {
 
         stage('Constrindo image Docker') {
             staeps {
-                dockerapp = docker.build("isrcode/gsn:${env.BUILD_ID}"
-                                        '-f Gsn_reclameali\Gsn-ReclameAli\Dockerfile')
+                dockerapp = docker.build("isrcode/gsn:${env.BUILD_ID}",
+                                        '-f ./Gsn_reclameali/Gsn-ReclameAli/Dockerfile ./Gsn_reclameali/Gsn-ReclameAli')
             }
         }
     }
